@@ -1,4 +1,21 @@
 # Compose Admob Guide
+## Implementations
+Add it in your root build.gradle at the end of repositories:
+```groovy
+	dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Add the dependency
+```groovy
+	dependencies {
+	        implementation 'com.github.quochungnguyen97:compose-admob:Tag'
+	}
+```
 ## Config Ids
 ```kotlin
 class MyApplication : Application() {
