@@ -22,11 +22,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            manifestPlaceholders["ads_id"] = "ca-app-pub-3940256099942544~3347511713"
+            buildConfigField("String", "INTER_ADS_ID", "\"ca-app-pub-3940256099942544/1033173712\"")
+            buildConfigField("String", "BANNER_ADS_ID", "\"ca-app-pub-3940256099942544/6300978111\"")
         }
         debug {
             isMinifyEnabled = false
