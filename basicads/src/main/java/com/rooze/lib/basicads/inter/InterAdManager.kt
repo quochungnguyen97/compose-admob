@@ -16,6 +16,14 @@ class InterAdManager(private val context: Context) {
     companion object {
         private const val TAG = "InterAdManager"
         private const val INTERVAL = 15000
+
+        private var _instance: InterAdManager? = null
+        fun getInstance(appContext: Context): InterAdManager {
+            if (_instance == null) {
+                _instance = InterAdManager(appContext)
+            }
+            return _instance!!
+        }
     }
 
     private var _interAd: InterstitialAd? = null
