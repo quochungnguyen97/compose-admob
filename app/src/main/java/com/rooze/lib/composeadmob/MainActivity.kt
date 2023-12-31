@@ -64,6 +64,18 @@ class MainActivity : ComponentActivity() {
                                 modifier = Modifier.fillMaxWidth(),
                                 nativeAd = nativeAd,
                                 state = nativeState,
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+                        ElevatedCard(
+                            modifier = Modifier
+                                .padding(horizontal = 16.dp)
+                        ) {
+                            NativeAdView(
+                                modifier = Modifier.fillMaxWidth(),
+                                nativeAd = nativeAd,
+                                state = nativeState,
                                 customLayout = com.rooze.lib.basicads.R.layout.native_ad_large,
                                 loadingView = {
                                     LargeLoadingView(it)

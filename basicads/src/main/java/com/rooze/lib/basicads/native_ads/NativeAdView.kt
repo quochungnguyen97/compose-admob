@@ -48,13 +48,9 @@ fun NativeAdView(
     AndroidView(
         modifier = modifier,
         factory = { context ->
-            val nativeAdView =
-                LayoutInflater.from(context).inflate(customLayout, null, false) as NativeAdView
-            nativeAdView.iconView = nativeAdView.findViewById(R.id.ad_app_icon)
-            nativeAdView.headlineView = nativeAdView.findViewById(R.id.ad_headline)
-            nativeAdView.bodyView = nativeAdView.findViewById(R.id.ad_body)
-            nativeAdView.callToActionView = nativeAdView.findViewById(R.id.ad_call_action)
-            nativeAdView.mediaView = nativeAdView.findViewById(R.id.ad_media)
+            val nativeAdView = LayoutInflater.from(context)
+                .inflate(customLayout, null, false) as NativeAdView
+            nativeAdView.init()
             nativeAdView
         },
         update = { nativeAdView ->
@@ -109,7 +105,15 @@ fun LoadingView(
                     )
                 }
             }
-            Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(8.dp))
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(20.dp)
+                    .clip(RoundedCornerShape(5.dp))
+                    .background(loadingContentBg)
+            )
+            Spacer(modifier = Modifier.height(10.dp))
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -177,11 +181,19 @@ fun LargeLoadingView(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .height(20.dp)
+                    .clip(RoundedCornerShape(5.dp))
+                    .background(loadingContentBg)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
                     .height(120.dp)
                     .clip(RoundedCornerShape(10.dp))
                     .background(loadingContentBg)
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(10.dp))
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
