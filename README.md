@@ -13,7 +13,8 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 ```groovy
 	dependencies {
-	        implementation 'com.github.quochungnguyen97:compose-admob:Tag'
+	        implementation 'com.github.quochungnguyen97:compose-admob:1.2'
+    		implementation("com.google.android.gms:play-services-ads:22.6.0")
 	}
 ```
 ## Config Ids
