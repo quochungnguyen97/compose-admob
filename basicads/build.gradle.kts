@@ -60,6 +60,8 @@ dependencies {
 
     implementation("androidx.compose.material:material:1.5.4")
 
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+
     // Shimmer
     implementation("com.valentinilk.shimmer:compose-shimmer:1.2.0")
 
