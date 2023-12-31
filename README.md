@@ -13,7 +13,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 ```groovy
 	dependencies {
-	        implementation 'com.github.quochungnguyen97:compose-admob:1.2'
+	        implementation 'com.github.quochungnguyen97:compose-admob:1.3'
     		implementation("com.google.android.gms:play-services-ads:22.6.0")
 	}
 ```
@@ -62,4 +62,41 @@ class MyApplication : Application() {
             )
         }
     }
+```
+## Native item in list
+```kotlin
+@Composable
+fun ListScreen() {
+    val items = (1..100).map {
+        WithNativeItem(
+            id = it.toString(),
+            data = it,
+        )
+    }
+    ListWithNative(
+        modifier = Modifier.fillMaxSize(),
+        nativeCount = 3,
+        nativeRepeat = 1000,
+        useId = true,
+        items = items,
+        itemView = {
+            ListItem(headlineContent = {
+                Text(text = "Item: $it")
+            }, supportingContent = {
+                Text(text = "Description: $it")
+            })
+        }
+    )
+}
+```
+## Inter
+```kotlin
+	// Load inter
+        val interAdManager = InterAdManager.getInstance(applicationContext)
+        interAdManager.loadInter()
+
+	// Show inter and customize next action
+	interAdManager.showInterAd(this@MainActivity) {
+	    navController.navigate("next")
+	}
 ```
