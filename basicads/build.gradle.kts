@@ -89,7 +89,7 @@ afterEvaluate {
 
                 groupId = "com.github.quochungnguyen97"
                 artifactId = "compose-admob"
-                version = "1.4"
+                version = "1.5"
             }
         }
     }
