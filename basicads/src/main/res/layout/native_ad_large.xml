@@ -82,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="13dp"
                 android:textColor="#ff8e00"
+                android:textStyle="bold"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 

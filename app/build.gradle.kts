@@ -37,6 +37,14 @@ android {
             buildConfigField("String", "INTER_ADS_ID", "\"ca-app-pub-3940256099942544/1033173712\"")
             buildConfigField("String", "BANNER_ADS_ID", "\"ca-app-pub-3940256099942544/6300978111\"")
         }
+
+        create("normal") {
+            initWith(getByName("release"))
+        }
+        create("pro") {
+            initWith(getByName("release"))
+            applicationIdSuffix = ".pro"
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

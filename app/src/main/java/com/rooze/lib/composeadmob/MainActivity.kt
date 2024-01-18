@@ -141,6 +141,9 @@ fun MainScreen(
                 modifier = Modifier.fillMaxWidth(),
                 nativeAd = nativeAd,
                 state = nativeState,
+                mainTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                subTextColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
+                actionColor = MaterialTheme.colorScheme.primary,
                 customLayout = com.rooze.lib.basicads.R.layout.native_ad_large,
                 loadingView = {
                     LargeLoadingView(it)

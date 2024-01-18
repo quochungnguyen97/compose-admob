@@ -1,10 +1,13 @@
 package com.rooze.lib.basicads.native_ads
 
+import android.content.res.ColorStateList
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdView
 import com.rooze.lib.basicads.R
@@ -70,6 +73,20 @@ fun NativeAdView.bindNativeAd(nativeAd: NativeAd) {
         priceView?.visibility = View.VISIBLE
     } ?: run {
         priceView?.visibility = View.GONE
+    }
+}
+
+fun NativeAdView.updateColor(mainTextColor: Color?, subTextColor: Color?, actionColor: Color?) {
+    subTextColor?.let { color ->
+        (storeView as? TextView)?.setTextColor(color.toArgb())
+    }
+    mainTextColor?.let { color ->
+        (headlineView as? TextView)?.setTextColor(color.toArgb())
+        (bodyView as? TextView)?.setTextColor(color.toArgb())
+    }
+    actionColor?.let { color ->
+        (priceView as? TextView)?.setTextColor(color.toArgb())
+        (callToActionView as? Button)?.backgroundTintList = ColorStateList.valueOf(color.toArgb())
     }
 }
 
