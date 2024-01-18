@@ -1,7 +1,6 @@
 package com.rooze.lib.basicads.native_ads
 
 import android.view.LayoutInflater
-import android.widget.TextView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,13 +34,14 @@ fun NativeAdView(
     mainTextColor: Color? = null,
     subTextColor: Color? = null,
     actionColor: Color? = null,
+    actionTextColor: Color? = null,
     nativeAd: NativeAd?,
     state: AdState,
     loadingView: @Composable (Modifier) -> Unit = {
         LoadingView(it)
     }
 ) {
-    if (state == AdState.FAILED) {
+    if (state == AdState.FAILED || state == AdState.INIT) {
         return
     }
 
@@ -60,7 +60,7 @@ fun NativeAdView(
         update = { nativeAdView ->
             nativeAd?.let { nativeAd ->
                 nativeAdView.bindNativeAd(nativeAd)
-                nativeAdView.updateColor(mainTextColor, subTextColor, actionColor)
+                nativeAdView.updateColor(mainTextColor, subTextColor, actionColor, actionTextColor)
                 nativeAdView.setNativeAd(nativeAd)
             }
         }

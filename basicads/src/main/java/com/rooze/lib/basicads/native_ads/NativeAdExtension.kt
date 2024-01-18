@@ -76,7 +76,7 @@ fun NativeAdView.bindNativeAd(nativeAd: NativeAd) {
     }
 }
 
-fun NativeAdView.updateColor(mainTextColor: Color?, subTextColor: Color?, actionColor: Color?) {
+fun NativeAdView.updateColor(mainTextColor: Color?, subTextColor: Color?, actionColor: Color?, onActionColor: Color?) {
     subTextColor?.let { color ->
         (storeView as? TextView)?.setTextColor(color.toArgb())
     }
@@ -87,6 +87,9 @@ fun NativeAdView.updateColor(mainTextColor: Color?, subTextColor: Color?, action
     actionColor?.let { color ->
         (priceView as? TextView)?.setTextColor(color.toArgb())
         (callToActionView as? Button)?.backgroundTintList = ColorStateList.valueOf(color.toArgb())
+    }
+    onActionColor?.let { color ->
+        (callToActionView as? Button)?.setTextColor(color.toArgb())
     }
 }
 

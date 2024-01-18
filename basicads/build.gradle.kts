@@ -87,7 +87,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 from(components["release"])
 
-                groupId = "com.github.quochungnguyen97"
+                groupId = "com.rooze.libs"
                 artifactId = "compose-admob"
                 version = "1.5"
             }
