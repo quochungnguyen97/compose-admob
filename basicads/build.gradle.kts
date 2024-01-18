@@ -60,7 +60,7 @@ dependencies {
 
     implementation("androidx.compose.material:material:1.5.4")
 
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
 
     // Shimmer
     implementation("com.valentinilk.shimmer:compose-shimmer:1.2.0")
@@ -89,7 +89,7 @@ afterEvaluate {
 
                 groupId = "com.github.quochungnguyen97"
                 artifactId = "compose-admob"
-                version = "1.0"
+                version = "1.4"
             }
         }
     }
